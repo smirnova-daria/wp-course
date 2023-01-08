@@ -13,3 +13,8 @@ add_action('wp_footer', function(){
     wp_enqueue_script('init', get_template_directory_uri().'/assets/js/init.js');
 
 });
+
+add_action( 'after_setup_theme', function(){
+    register_nav_menu('header', 'menu in header');
+    register_nav_menu('footer', 'menu in footer');
+});
