@@ -17,6 +17,9 @@ add_action('wp_footer', function(){
 add_action( 'after_setup_theme', function(){
     register_nav_menu('header', 'menu in header');
     register_nav_menu('footer', 'menu in footer');
+
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails', ['post']);
 });
 
 add_action('widgets_init', function(){
