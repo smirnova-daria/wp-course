@@ -18,3 +18,15 @@ add_action( 'after_setup_theme', function(){
     register_nav_menu('header', 'menu in header');
     register_nav_menu('footer', 'menu in footer');
 });
+
+add_action('widgets_init', function(){
+    register_sidebar( array(
+        'name'          => 'right sidebar',
+        'id'            => 'right_sidebar',
+        'description'   => '',
+        'before_widget' => '<div class="widget widget_%2$s">',
+		'after_widget'  => "</div>\n",
+        'before_title'  => '<h5 class="widget-title">',
+        'after_title'   => "</h5>\n",
+    ) );
+});
